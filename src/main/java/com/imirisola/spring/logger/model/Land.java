@@ -22,43 +22,43 @@ public class Land {
 	@JoinColumn(name = "property_id", referencedColumnName = "id")
 	private Property property ;
 	
-	@Column(name = "purpose", nullable = false)
+	@Column(name = "purpose", nullable = true)
 	private String purpose; 
 	
-	@Column(name = "location", nullable = false)
+	@Column(name = "location", nullable = true)
 	private String location; 
 	
-	@Column(name = "space", nullable = false)
+	@Column(name = "space", nullable = true)
 	private String space; 
 	
 	@Column(name = "coordinates", nullable = true)
 	private String coordinates; 
 	
-	@Column(name = "buildings_num", nullable = false)
+	@Column(name = "buildings_num", nullable = true)
 	private String buildings_num; 
 	
-	@Column(name = "flats_buildings", nullable = false)
+	@Column(name = "flats_buildings", nullable = true)
 	private String flats_buildings; 
 	
-	@Column(name = "workers_no", nullable = false)
+	@Column(name = "workers_no", nullable = true)
 	private String workers_no; 
 	
-	@Column(name = "project_info", nullable = false)
+	@Column(name = "project_info", nullable = true)
 	private String project_info;
 	
-	@Column(name = "project_name", nullable = false)
+	@Column(name = "project_name", nullable = true)
 	private String project_name;
 	
-	@Column(name = "project_budget", nullable = false)
+	@Column(name = "project_budget", nullable = true)
 	private String project_budget;
 	
-	@Column(name = "amount_approved", nullable = false)
+	@Column(name = "amount_approved", nullable = true)
 	private String amount_approved;
 	
-	@Column(name = "projct_start_date", nullable = false)
+	@Column(name = "projct_start_date", nullable = true)
 	private String projct_start_date;
 	
-	@Column(name = "projct_end_date", nullable = false)
+	@Column(name = "projct_end_date", nullable = true)
 	private String projct_end_date;
 	
 	

@@ -27,39 +27,39 @@ public class Property {
 	 @Column(name = "authority_name", nullable = false)
 	 private String authority_name; 
 	 
-	 @Column(name = "sector", nullable = false)
+	 @Column(name = "sector", nullable = true)
 	 private String sector; 
 	 
-	 @Column(name = "city", nullable = false)
+	 @Column(name = "city", nullable = true)
 	 private String city; 
 	 
-	 @Column(name = "representative", nullable = false)
+	 @Column(name = "representative", nullable = true)
 	 private String representative; 
 	 
 
-	@Column(name = "mobile", nullable = false)
+	@Column(name = "mobile", nullable = true)
 	 private String mobile; 
 	 
-	 @Column(name = "phone", nullable = false)
+	 @Column(name = "phone", nullable = true)
 	 private String phone; 
 	 
-	 @Column(name = "email", nullable = false)
+	 @Column(name = "email", nullable = true)
 	 private String email; 
 	 
-	 @Column(name = "explanation", nullable = false)
+	 @Column(name = "explanation", nullable = true)
 	 private String explanation; 
 	 
-	 @Column(name = "special_requests", nullable = false)
+	 @Column(name = "special_requests", nullable = true)
 	 private String special_requests; 
 	 
-	 @Column(name = "type ", nullable = false)
+	 @Column(name = "type ", nullable = true)
 	 private String type ; 
 	 
 	 
 	 @Column(name = "created_at", nullable = true)
 	 private Date created_at ; 
 	 
-	 @Column(name = "status", nullable = false)
+	 @Column(name = "status", nullable = true)
 	 private String status ;
 	 
 	 @OneToOne(mappedBy = "property",cascade = CascadeType.ALL, orphanRemoval = true)

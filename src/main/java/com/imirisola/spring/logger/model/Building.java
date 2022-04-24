@@ -25,59 +25,59 @@ public class Building {
 	@JoinColumn(name = "property_id", referencedColumnName = "id")
 	private Property property ;
 	
-	@Column(name = "visitor_info", nullable = false)
+	@Column(name = "visitor_info", nullable = true)
 	private String visitor_info; 
 	
-	@Column(name = "employees_no", nullable = false)
+	@Column(name = "employees_no", nullable = true)
 	private String employees_no; 
 	
-	@Column(name = "branch_manager", nullable = false)
+	@Column(name = "branch_manager", nullable = true)
 	private String branch_manager; 
 	
-	@Column(name = "supervisory_jobs", nullable = false)
+	@Column(name = "supervisory_jobs", nullable = true)
 	private String supervisory_jobs; 
 	
-	@Column(name = "office_emp_num", nullable = false)
+	@Column(name = "office_emp_num", nullable = true)
 	private String office_emp_num;
 	
-	@Column(name = "w_office_emp_num", nullable = false)
+	@Column(name = "w_office_emp_num", nullable = true)
 	private String w_office_emp_num;
 	
-	@Column(name = "expected_jobs", nullable = false)
+	@Column(name = "expected_jobs", nullable = true)
 	private String expected_jobs;
 	
-	@Column(name = "total_num", nullable = false)
+	@Column(name = "total_num", nullable = true)
 	private String total_num;
 	
-	@Column(name = "visitors", nullable = false)
+	@Column(name = "visitors", nullable = true)
 	private String visitors;
 	
-	@Column(name = "average_visitors", nullable = false)
+	@Column(name = "average_visitors", nullable = true)
 	private String average_visitors;
 	
-	@Column(name = "area_need", nullable = false)
+	@Column(name = "area_need", nullable = true)
 	private String area_need;
 	
-	@Column(name = "blank_num", nullable = false)
+	@Column(name = "blank_num", nullable = true)
 	private String blank_num;
 	
-	@Column(name = "main_building", nullable = false)
+	@Column(name = "main_building", nullable = true)
 	private String main_building;
 	
-	@Column(name = "service_building", nullable = false)
+	@Column(name = "service_building", nullable = true)
 	private String service_building;
 	
-	@Column(name = "store_building", nullable = false)
+	@Column(name = "store_building", nullable = true)
 	private String store_building;
 	
-	@Column(name = "guard_building", nullable = false)
+	@Column(name = "guard_building", nullable = true)
 	private String guard_building;
 	
-	@Column(name = "electric_building", nullable = false)
+	@Column(name = "electric_building", nullable = true)
 	private String electric_building;
 	
 	
-	@Column(name = "situations", nullable = false)
+	@Column(name = "situations", nullable = true)
 	private String situations;
 
 

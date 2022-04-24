@@ -24,46 +24,46 @@ public class OwnerBuilding {
     @JoinColumn(name = "property_id", referencedColumnName = "id")
     private Property property;
 	
-	@Column(name = "property_info", nullable = false)
+	@Column(name = "property_info", nullable = true)
 	private String property_info; 
 	
-	@Column(name = "property_name", nullable = false)
+	@Column(name = "property_name", nullable = true)
 	private String property_name; 
 	
-	@Column(name = "usage_type", nullable = false)
+	@Column(name = "usage_type", nullable = true)
 	private String usage_type; 
 	
-	@Column(name = "location", nullable = false)
+	@Column(name = "location", nullable = true)
 	private String location; 
 	
-	@Column(name = "owner", nullable = false)
+	@Column(name = "owner", nullable = true)
 	private String owner; 
 	
-	@Column(name = "instrument_no", nullable = false)
+	@Column(name = "instrument_no", nullable = true)
 	private String instrument_no; 
 	
-	@Column(name = "total_area", nullable = false)
+	@Column(name = "total_area", nullable = true)
 	private String total_area; 
 	
-	@Column(name = "building_area", nullable = false)
+	@Column(name = "building_area", nullable = true)
 	private String building_area; 
 	
-	@Column(name = "rental", nullable = false)
+	@Column(name = "rental", nullable = true)
 	private String rental; 
 	
-	@Column(name = "employees_info", nullable = false)
+	@Column(name = "employees_info", nullable = true)
 	private String employees_info; 
 	
-	@Column(name = "employees_no", nullable = false)
+	@Column(name = "employees_no", nullable = true)
 	private String employees_no; 
 	
-	@Column(name = "capacity", nullable = false)
+	@Column(name = "capacity", nullable = true)
 	private String capacity; 
 	
-	@Column(name = "coordinates", nullable = false)
+	@Column(name = "coordinates", nullable = true)
 	private String coordinates; 
 	
-	@Column(name = "notes", nullable = false)
+	@Column(name = "notes", nullable = true)
 	private String notes;
 
 	public Long getId() {
