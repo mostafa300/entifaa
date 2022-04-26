@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.imirisola.spring.logger.model.Property;
 import com.imirisola.spring.logger.payload.PropertyDto;
 import com.imirisola.spring.logger.service.PropertyService;
 
