@@ -74,6 +74,9 @@ public class Property {
 	 @JsonManagedReference
 	 private Set<OwnerBuilding> ownerBuildings ;
 	 
+	 @OneToMany(mappedBy = "property",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	 @JsonManagedReference
+	 private Set<Attachment> attachments ;
 	
 
 
@@ -204,4 +207,13 @@ public class Property {
 	public void setBuilding(Building building) {
 		this.building = building;
 	}
+
+	public Set<Attachment> getAttachments() {
+		return attachments;
+	}
+
+	public void setAttachments(Set<Attachment> attachments) {
+		this.attachments = attachments;
+	}
+	
 }

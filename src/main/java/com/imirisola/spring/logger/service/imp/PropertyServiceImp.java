@@ -13,6 +13,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import com.imirisola.spring.logger.model.Attachment;
 import com.imirisola.spring.logger.model.Building;
 import com.imirisola.spring.logger.model.Land;
 import com.imirisola.spring.logger.model.OwnerBuilding;
@@ -20,6 +21,7 @@ import com.imirisola.spring.logger.model.Property;
 import com.imirisola.spring.logger.payload.LandDto;
 import com.imirisola.spring.logger.payload.PropertyCpiDto;
 import com.imirisola.spring.logger.payload.PropertyDto;
+import com.imirisola.spring.logger.repository.AttachmentRepository;
 import com.imirisola.spring.logger.repository.BuildingRepository;
 import com.imirisola.spring.logger.repository.LandRepository;
 import com.imirisola.spring.logger.repository.OwnerBuildingRepository;
@@ -33,30 +35,20 @@ public class PropertyServiceImp implements PropertyService{
 	private BuildingRepository buildingRepository ;
 	private LandRepository landRepository ; 
 	private OwnerBuildingRepository ownerBuildingRepository;
+	private AttachmentRepository attachmentRepository;
 	private ModelMapper mapper;
 	
 
-	public PropertyServiceImp(PropertyRepository propertyRepository,BuildingRepository buildingRepository, LandRepository landRepository,OwnerBuildingRepository ownerBuildingRepository ,ModelMapper mapper) {
+	public PropertyServiceImp(PropertyRepository propertyRepository,BuildingRepository buildingRepository, LandRepository landRepository,OwnerBuildingRepository ownerBuildingRepository ,AttachmentRepository attachmentRepository,ModelMapper mapper) {
 		this.propertyRepository = propertyRepository;
 		this.buildingRepository = buildingRepository ;
 		this.landRepository     = landRepository ;
 		this.ownerBuildingRepository = ownerBuildingRepository ;
+		this.attachmentRepository = attachmentRepository ;
 		this.mapper = mapper;
 	}
 
-	
 
-//	@Override
-//	public Property creatPropertyRequest(Property property) {
-//		
-//		Land land = property.getLand();
-//		land.setProperty(property);
-//		property.setLand(land);
-//		
-//		Property nweProperty = propertyRepository.save(property);
-//		return nweProperty;
-//	}
-	
 	
 	@Override
 	public PropertyDto creatPropertyRequest(PropertyDto propertyDto) {
@@ -66,10 +58,13 @@ public class PropertyServiceImp implements PropertyService{
 		
 		//private Set<OwnerBuilding> ownerBuildings ;
 		Land land = property.getLand();
-		Building building = property.getBuilding();
+		Building building = property.getBuilding(); 
+	
 		
 
 		Set<OwnerBuilding> ownerBuildings = property.getOwnerBuildings();
+		Set<Attachment> attachments = property.getAttachments();
+		
 		if(land != null) {
 		  land.setProperty(property);
 		  property.setLand(land);
@@ -84,6 +79,9 @@ public class PropertyServiceImp implements PropertyService{
 			ownerBuilding1.setProperty(property);
 		}
 		
+		for(Attachment attachment1 : attachments) {
+			attachment1.setProperty(property);
+		}
 	
 		
 		property.setOwnerBuildings(ownerBuildings);

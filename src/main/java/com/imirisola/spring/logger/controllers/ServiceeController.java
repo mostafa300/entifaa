@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,5 +36,16 @@ public class ServiceeController {
 	@GetMapping("/api/servicee")
 	public List<ServiceeDto> getAllServicees(){
 		return service.getAllServicee();
+	}
+	
+//    // get post by id
+//    @GetMapping("/{id}")
+//    public ResponseEntity<PostDto> getPostById(@PathVariable(name = "id") long id){
+//        return ResponseEntity.ok(postService.getPostById(id));
+//    }
+	
+	@GetMapping("/api/servicee/{id}")
+	public ResponseEntity<ServiceeDto> getServiceById(@PathVariable(name = "id") long id){
+		return ResponseEntity.ok(service.getServiceById(id));
 	}
 }

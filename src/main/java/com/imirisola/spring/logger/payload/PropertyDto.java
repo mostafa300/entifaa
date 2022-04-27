@@ -2,6 +2,8 @@ package com.imirisola.spring.logger.payload;
 import java.util.Date;
 import java.util.Set;
 
+import com.imirisola.spring.logger.model.Attachment;
+
 import lombok.Data;
 
 @Data
@@ -25,6 +27,7 @@ public class PropertyDto {
 	 private LandDto land ;
 	 private BuildingDto building ;
 	 private Set<OwnerBuildingDto> ownerBuildings ;
+	 private Set<Attachment> attachments;
 
 	 
 	 
@@ -133,4 +136,12 @@ public class PropertyDto {
 	public void setOwnerBuildings(Set<OwnerBuildingDto> ownerBuildings) {
 		this.ownerBuildings = ownerBuildings;
 	}
+	public Set<Attachment> getAttachments() {
+		return attachments;
+	}
+	public void setAttachments(Set<Attachment> attachments) {
+		this.attachments = attachments;
+	}
+	
+	
 }

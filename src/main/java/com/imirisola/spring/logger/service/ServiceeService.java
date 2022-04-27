@@ -11,4 +11,7 @@ public interface ServiceeService {
 	ServiceeDto createServicee(ServiceeDto serviceeDto);
 	
 	List<ServiceeDto> getAllServicee();
+	
+//	 PostDto getPostById(long id);
+	ServiceeDto getServiceById(long id);
 }

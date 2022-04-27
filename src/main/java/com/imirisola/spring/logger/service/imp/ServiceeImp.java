@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import com.imirisola.spring.logger.exception.ResourceNotFoundException;
 import com.imirisola.spring.logger.model.Servicee;
 import com.imirisola.spring.logger.model.StepService;
 import com.imirisola.spring.logger.payload.ServiceeDto;
@@ -48,19 +49,19 @@ public class ServiceeImp implements ServiceeService{
 		return newServiceDto;
 	}
 
-	
-//	 @Override
-//	    public List<PostDto> getAllPosts() {
-//	        List<Post> posts = postRepository.findAll();
-//	        return posts.stream().map(post -> mapToDTO(post)).collect(Collectors.toList());
-//	    }
-	
+		
 	@Override
 	public List<ServiceeDto> getAllServicee() {
 		List<Servicee> servicees= serviceeRepository.findAll();
 		return servicees.stream().map(servicee -> serviceeMapToDto(servicee)).collect(Collectors.toList());
 	}
 	
+
+	@Override
+	public ServiceeDto getServiceById(long id) {
+		Servicee servicee = serviceeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("property", "id", id));
+		return serviceeMapToDto(servicee);
+	}
 	
 	// Convert DTO to Entity Model 
 	private Servicee serviceeMapToModel(ServiceeDto serviceeDto) {
