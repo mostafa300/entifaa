@@ -1,11 +1,19 @@
 package com.imirisola.spring.logger.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,14 +36,23 @@ public class Servicee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private  Long id ;
 	
-	 @Column(name = "name", nullable = false)
+	
+	 @Column(name = "name", nullable = true)
+	 @Lob
 	 private String name;
 	 
-	 @Column(name = "desc", nullable = false)
+	 @Column(name = "desc", nullable = true)
+	 @Lob
 	 private String desc;
 	 
-	 @Column(name = "requirements", nullable = false)
+	 @Column(name = "requirements", nullable = true)
+	 @Lob
 	 private String requirements;
+	 
+	 
+	 @OneToMany(mappedBy = "servicee",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	 @JsonManagedReference
+	 private Set<StepService> stepsService ;
 
 	public Long getId() {
 		return id;
@@ -67,6 +84,14 @@ public class Servicee {
 
 	public void setRequirements(String requirements) {
 		this.requirements = requirements;
+	}
+
+	public Set<StepService> getStepsService() {
+		return stepsService;
+	}
+
+	public void setStepsService(Set<StepService> stepsService) {
+		this.stepsService = stepsService;
 	}
 	 
 	 
